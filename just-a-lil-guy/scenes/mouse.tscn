@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bvlmnjxvei21u"]
+
+[ext_resource type="Script" uid="uid://d167xkjq1sc7x" path="res://mouse.gd" id="1_ouscy"]
+[ext_resource type="Texture2D" uid="uid://co4q240n8twch" path="res://icon.svg" id="1_xa71f"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=851941238]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xa71f")
+script = ExtResource("1_ouscy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1637642250]
+limit_left = -70
+limit_top = -29
+limit_right = 1210
+limit_bottom = 689
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
