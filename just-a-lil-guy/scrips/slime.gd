@@ -1,8 +1,8 @@
 extends Area2D
 
-
+var velocity = Vector2()
 var clickable:bool = false
-var speed:float = 10
+@onready var speed:float = 50
 var hp:int = 5
 var player_dmg = 1
 var min_essence:int = 2
@@ -24,9 +24,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	clickable = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	
 	#if mouse is on slime
 	if clickable:
@@ -46,6 +43,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if Global.gub != null:
+		velocity = global_position.direction_to(Global.gub.global_position)
 	
-	#POSITION STUFF IS TEMPORARY UNTIL PROPER MOVEMENT IS MADE
-	position += Vector2.RIGHT * speed * delta #move right based on speed
+	global_position += velocity * speed * delta
+	

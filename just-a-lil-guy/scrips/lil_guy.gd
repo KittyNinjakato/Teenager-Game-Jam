@@ -3,8 +3,11 @@ extends Area2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var slime: Area2D = $"."
 
+func _ready():
+	Global.gub = self
 
-
+func _exit_tree():
+	Global.gub = null
 
 func _on_area_entered(area: Area2D) -> void:
 	var hp = game_manager.lil_guy_takes_dmg(5)
