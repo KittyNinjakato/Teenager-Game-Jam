@@ -41,10 +41,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite.play("idle")
 	
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta: float) -> void:
-	if Global.gub != null:
+	if Global.gub != null: #sees if gub exists
 		velocity = global_position.direction_to(Global.gub.global_position)
-	
+	#velocity is set to where the gub is
 	global_position += velocity * speed * delta
-	
+	#the poisiton of the slime is set a bit closer to gub
