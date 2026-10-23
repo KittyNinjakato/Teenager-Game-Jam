@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bkfqgclfoiekq"]
 
 [ext_resource type="Texture2D" uid="uid://r6ll6tuvgaoi" path="res://sprites/placeholder_lil_guy.png" id="1_01xe7"]
+[ext_resource type="Script" uid="uid://b3igpu6idmcru" path="res://scrips/lil_guy.gd" id="1_bu4hj"]
+[ext_resource type="Texture2D" uid="uid://brufuv5qfevl7" path="res://sprites/lil_guy_placeholder+.png" id="3_j240v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
 
@@ -12,6 +14,10 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_01xe7")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxn1k"]
+atlas = ExtResource("3_j240v")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ypebk"]
 animations = [{
 "frames": [{
@@ -22,16 +28,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_j240v")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_yxn1k")
+}],
+"loop": 0,
+"name": &"takes_dmg",
 "speed": 1.0
 }]
 
 [node name="Lil_guy" type="Area2D" unique_id=1539912893]
+script = ExtResource("1_bu4hj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93334792]
 shape = SubResource("CircleShape2D_ypebk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753138092]
 sprite_frames = SubResource("SpriteFrames_ypebk")
-autoplay = "default"
-frame_progress = 0.44482347
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

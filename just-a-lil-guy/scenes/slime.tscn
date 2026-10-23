@@ -50,9 +50,8 @@ shape = SubResource("CircleShape2D_ypebk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1378827583]
 sprite_frames = SubResource("SpriteFrames_eelip")
-animation = &"takes_dmg"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
