@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bs7hj31illwc2" path="res://scenes/slime.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bvlmnjxvei21u" path="res://scenes/mouse.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dcwe737tdj77v" path="res://scenes/skill_tree_ui.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://cndea4bvxmbkd" path="res://sprites/Backround.webp" id="6_p57ef"]
 
 [node name="Node2D" type="Node2D" unique_id=209446630]
 
@@ -19,27 +20,27 @@ scale = Vector2(3, 3)
 [node name="Enemies" type="Node" parent="." unique_id=809307364]
 
 [node name="slime" parent="Enemies" unique_id=846581861 instance=ExtResource("2_yqjtg")]
-position = Vector2(314, 313)
+position = Vector2(981, 715)
 scale = Vector2(3.5, 3.5)
 
 [node name="slime2" parent="Enemies" unique_id=1372722547 instance=ExtResource("2_yqjtg")]
-position = Vector2(253, 165)
+position = Vector2(256, -137)
 scale = Vector2(3, 3)
 
 [node name="slime3" parent="Enemies" unique_id=40839530 instance=ExtResource("2_yqjtg")]
-position = Vector2(-68, 235)
+position = Vector2(234, 753)
 scale = Vector2(4, 4)
 
 [node name="slime4" parent="Enemies" unique_id=374164305 instance=ExtResource("2_yqjtg")]
-position = Vector2(124, 280)
+position = Vector2(1227, 251)
 scale = Vector2(4, 4)
 
 [node name="slime5" parent="Enemies" unique_id=224162096 instance=ExtResource("2_yqjtg")]
-position = Vector2(-33, 367)
+position = Vector2(-154, 363)
 scale = Vector2(3, 3)
 
 [node name="slime6" parent="Enemies" unique_id=2050721707 instance=ExtResource("2_yqjtg")]
-position = Vector2(-231, 242)
+position = Vector2(960, -161.99997)
 scale = Vector2(3.5, 3.5)
 
 [node name="Mouse_Canvas_layer" type="CanvasLayer" parent="." unique_id=437602751]
@@ -47,8 +48,14 @@ layer = 2
 
 [node name="Mouse" parent="Mouse_Canvas_layer" unique_id=858982482 instance=ExtResource("4_lbhrr")]
 z_index = 15
-metadata/_edit_lock_ = true
+position = Vector2(530, 300)
 
 [node name="Skill_tree" parent="." unique_id=1363677048 instance=ExtResource("5_iywne")]
+visible = false
 z_index = 6
 scale = Vector2(0.84000015, 0.84000015)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1535481824]
+z_index = -1000
+position = Vector2(570, 330)
+texture = ExtResource("6_p57ef")

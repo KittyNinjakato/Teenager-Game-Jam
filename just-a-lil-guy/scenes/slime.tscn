@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bs7hj31illwc2"]
 
 [ext_resource type="Script" uid="uid://csyq0kjcowo8h" path="res://scrips/slime.gd" id="1_p2gj0"]
+[ext_resource type="Texture2D" uid="uid://w05gxhq8ct7y" path="res://sprites/Slime2.webp" id="2_2xjuo"]
 [ext_resource type="Texture2D" uid="uid://da8kk5pd6s2yv" path="res://sprites/slime_placeholder++.png" id="2_p2gj0"]
+[ext_resource type="Texture2D" uid="uid://o8wd17ausebi" path="res://sprites/Slime3.webp" id="3_a02ik"]
+[ext_resource type="Texture2D" uid="uid://dcarko3lntkrc" path="res://sprites/Slime4.webp" id="4_pu8ps"]
+[ext_resource type="Texture2D" uid="uid://gdnceaef4kjp" path="res://sprites/Slime5.webp" id="5_g40cl"]
+[ext_resource type="Texture2D" uid="uid://qsmoyt31a1g" path="res://sprites/Slime6.webp" id="6_cxm07"]
+[ext_resource type="Texture2D" uid="uid://bcnqgkd61e11o" path="res://sprites/Slime7.webp" id="7_g2qvl"]
+[ext_resource type="Texture2D" uid="uid://cerrg30m41v0u" path="res://sprites/Slime8.webp" id="8_tyl0w"]
+[ext_resource type="Texture2D" uid="uid://c4fw2ajh3a0wu" path="res://sprites/Slime9.webp" id="9_fur4c"]
+[ext_resource type="Texture2D" uid="uid://bg6vwau8fjeyc" path="res://sprites/Slime10.webp" id="10_2v7ff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
 
@@ -19,6 +28,38 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eelip"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2xjuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a02ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pu8ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g40cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cxm07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g2qvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tyl0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fur4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2v7ff")
+}],
+"loop": 1,
+"name": &"New idle",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n6pvg")
@@ -49,9 +90,12 @@ scale = Vector2(1.4399979, 1.4399979)
 shape = SubResource("CircleShape2D_ypebk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1378827583]
+position = Vector2(9, 84)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_eelip")
-animation = &"idle"
-autoplay = "idle"
+animation = &"New idle"
+autoplay = "New idle"
+frame = 8
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -2,7 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://r6ll6tuvgaoi" path="res://sprites/placeholder_lil_guy.png" id="1_01xe7"]
 [ext_resource type="Script" uid="uid://b3igpu6idmcru" path="res://scrips/lil_guy.gd" id="1_bu4hj"]
+[ext_resource type="Texture2D" uid="uid://duvrbjv3out1j" path="res://sprites/Gub5.webp" id="3_5ejhy"]
 [ext_resource type="Texture2D" uid="uid://brufuv5qfevl7" path="res://sprites/lil_guy_placeholder+.png" id="3_j240v"]
+[ext_resource type="Texture2D" uid="uid://4poqwrg8srs" path="res://sprites/Gub6.webp" id="4_pxxx8"]
+[ext_resource type="Texture2D" uid="uid://bkssrobkbbhb6" path="res://sprites/Gub7.webp" id="5_gk7be"]
+[ext_resource type="Texture2D" uid="uid://bdwye2ja05lxx" path="res://sprites/Gub8.webp" id="6_xigon"]
+[ext_resource type="Texture2D" uid="uid://b8a5w6w5gkmpx" path="res://sprites/Gub9.webp" id="7_da5f2"]
+[ext_resource type="Texture2D" uid="uid://b8fh5cur4yfuj" path="res://sprites/Gub10.webp" id="8_q2svl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
 
@@ -22,13 +28,54 @@ region = Rect2(0, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_5ejhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gk7be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xigon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_da5f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q2svl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ejhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pxxx8")
+}],
+"loop": 1,
+"name": &"idle_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bu4hj")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j240v")
 }],
-"loop": 1,
-"name": &"idle",
+"loop": 0,
+"name": &"old idle",
 "speed": 1.0
 }, {
 "frames": [{
@@ -47,9 +94,11 @@ script = ExtResource("1_bu4hj")
 shape = SubResource("CircleShape2D_ypebk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753138092]
+position = Vector2(60.999996, 12.999999)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ypebk")
-animation = &"idle"
-autoplay = "idle"
+animation = &"idle_1"
+autoplay = "idle_1"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
