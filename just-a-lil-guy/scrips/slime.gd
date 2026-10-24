@@ -2,7 +2,7 @@ extends Area2D
 
 var velocity = Vector2()
 var clickable:bool = false
-@onready var speed:float = 50
+@onready var speed:float = 25
 var hp:int = 5
 var player_dmg = 1
 var min_essence:int = 2
@@ -17,12 +17,16 @@ var rng = RandomNumberGenerator.new()
 
 
 #tracks if slime is allowed to be clicked
-func _on_mouse_entered() -> void:
+func _on_mouse_entered():
 	clickable = true
+	slime_died()#sorry bohden this is just temporary because there was an issue with the essence and i have no clue how to fix it
+	
+	
 	
 #tracks if slime is allowed to be clicked
-func _on_mouse_exited() -> void:
+func _on_mouse_exited():
 	clickable = false
+	
 
 func _process(_delta: float) -> void:
 	#if mouse is on slime
@@ -30,10 +34,11 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("click"): #if clicked
 			hp -= player_dmg #deal damage to health
 			animated_sprite.play("takes_dmg") #play damage animation
+			print("youch")
 			if hp <= 0: #if drops to 0 health
 				var essence_dropped = rng.randf_range(min_essence,max_essence) #random num between min and max
 				game_manager.get_essence(essence_dropped) #essence added to collected essence
-				queue_free() #delete slime
+				slime_died() #delete slime
 
 
 #when any animation is finished
@@ -48,3 +53,7 @@ func _physics_process(delta: float) -> void:
 	#velocity is set to where the gub is
 	global_position += velocity * speed * delta
 	#the poisiton of the slime is set a bit closer to gub
+	
+func slime_died():
+	Global._wave_counter()
+	queue_free()

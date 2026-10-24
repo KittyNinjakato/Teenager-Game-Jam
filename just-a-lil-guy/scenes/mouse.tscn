@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://co4q240n8twch" path="res://icon.svg" id="1_xa71f"]
 
 [node name="Sprite2D" type="Sprite2D" unique_id=851941238]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_xa71f")
 script = ExtResource("1_ouscy")
 

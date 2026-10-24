@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bvlmnjxvei21u" path="res://scenes/mouse.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dcwe737tdj77v" path="res://scenes/skill_tree_ui.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://cndea4bvxmbkd" path="res://sprites/Backround.webp" id="6_p57ef"]
-[ext_resource type="Script" uid="uid://ct8iulp3cut4d" path="res://scenes/enemy_spawner.gd" id="6_u5sy4"]
+[ext_resource type="Script" uid="uid://ct8iulp3cut4d" path="res://scrips/enemy_spawner.gd" id="6_u5sy4"]
 
 [node name="The world" type="Node2D" unique_id=209446630]
 
@@ -18,8 +18,15 @@ texture = ExtResource("6_p57ef")
 unique_name_in_owner = true
 script = ExtResource("1_lnu2h")
 
+[node name="Enemy Spawner" type="Node" parent="game_manager" unique_id=25815525]
+script = ExtResource("6_u5sy4")
+
+[node name="Enemy Spawning Timer" type="Timer" parent="game_manager/Enemy Spawner" unique_id=541270423]
+wait_time = 0.25
+autostart = true
+
 [node name="Lil_guy" parent="." unique_id=1539912893 instance=ExtResource("1_uwrxv")]
-position = Vector2(533, 292)
+position = Vector2(571, 313)
 scale = Vector2(3, 3)
 
 [node name="Mouse_Canvas_layer" type="CanvasLayer" parent="." unique_id=437602751]
@@ -27,17 +34,11 @@ layer = 2
 
 [node name="Mouse" parent="Mouse_Canvas_layer" unique_id=858982482 instance=ExtResource("4_lbhrr")]
 z_index = 15
-position = Vector2(530, 300)
+position = Vector2(605, 327)
 
 [node name="Skill_tree" parent="." unique_id=1363677048 instance=ExtResource("5_iywne")]
 visible = false
 z_index = 6
 scale = Vector2(0.84000015, 0.84000015)
 
-[node name="Enemy Spawner" type="Node" parent="." unique_id=25815525]
-script = ExtResource("6_u5sy4")
-
-[node name="Enemy Spawning Timer" type="Timer" parent="Enemy Spawner" unique_id=541270423]
-autostart = true
-
-[connection signal="timeout" from="Enemy Spawner/Enemy Spawning Timer" to="Enemy Spawner" method="_on_enemy_spawning_timer_timeout"]
+[connection signal="timeout" from="game_manager/Enemy Spawner/Enemy Spawning Timer" to="game_manager/Enemy Spawner" method="_on_enemy_spawning_timer_timeout"]
