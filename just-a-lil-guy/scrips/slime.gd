@@ -24,7 +24,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	clickable = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#if mouse is on slime
 	if clickable:
 		if Input.is_action_just_pressed("click"): #if clicked

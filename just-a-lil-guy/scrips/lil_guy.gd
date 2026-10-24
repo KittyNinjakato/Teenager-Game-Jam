@@ -9,7 +9,7 @@ func _ready():
 func _exit_tree():
 	Global.gub = null
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	var hp = game_manager.lil_guy_takes_dmg(5)
 	animated_sprite.play("takes_dmg")
 	print(hp)

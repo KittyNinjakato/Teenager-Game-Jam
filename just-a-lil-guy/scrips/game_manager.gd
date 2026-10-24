@@ -12,4 +12,7 @@ func lil_guy_takes_dmg(dmg):
 
 func get_essence(amount):
 	essence += amount
-	print("essence: " + str(essence))
+	#print("essence: " + str(essence))
+
+func spend_essense(cost):
+	essence -= cost

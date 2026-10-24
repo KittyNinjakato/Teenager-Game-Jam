@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dcwe737tdj77v"]
+
+[ext_resource type="PackedScene" uid="uid://sukhug7s0m7w" path="res://scenes/Skill_button.tscn" id="1_4h77i"]
+
+[node name="Skill_tree" type="Control" unique_id=1363677048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1817128386]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skill_button_1" parent="." unique_id=1275878595 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 536.0
+offset_right = 576.0
+offset_bottom = 576.0
+scale = Vector2(2, 2)
+
+[node name="cost_label_1" type="Label" parent="skill_button_1" unique_id=323459981]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "cost: 0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="skill_button_2" parent="skill_button_1" unique_id=1557675273 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -52.0
+offset_right = -104.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_4" parent="skill_button_1/skill_button_2" unique_id=637198047 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -52.0
+offset_right = -32.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_8" parent="skill_button_1/skill_button_2/skill_button_4" unique_id=50244269 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -52.0
+offset_right = -8.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_9" parent="skill_button_1/skill_button_2/skill_button_4" unique_id=866322451 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -52.0
+offset_right = 88.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_5" parent="skill_button_1/skill_button_2" unique_id=892169425 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -52.0
+offset_right = 112.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_10" parent="skill_button_1/skill_button_2/skill_button_5" unique_id=889402087 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -52.0
+offset_right = -8.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button2_11" parent="skill_button_1/skill_button_2/skill_button_5" unique_id=2033941873 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -52.0
+offset_right = 88.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_3" parent="skill_button_1" unique_id=2054463375 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -52.0
+offset_right = 184.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_6" parent="skill_button_1/skill_button_3" unique_id=1940035433 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -52.0
+offset_right = -32.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_12" parent="skill_button_1/skill_button_3/skill_button_6" unique_id=801999565 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -52.0
+offset_right = -8.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_13" parent="skill_button_1/skill_button_3/skill_button_6" unique_id=1197692580 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -52.0
+offset_right = 88.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_7" parent="skill_button_1/skill_button_3" unique_id=2085137226 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -52.0
+offset_right = 112.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_14" parent="skill_button_1/skill_button_3/skill_button_7" unique_id=455037305 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -52.0
+offset_right = -8.0
+offset_bottom = -12.0
+disabled = true
+
+[node name="skill_button_15" parent="skill_button_1/skill_button_3/skill_button_7" unique_id=947034787 instance=ExtResource("1_4h77i")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -52.0
+offset_right = 88.0
+offset_bottom = -12.0
+disabled = true
