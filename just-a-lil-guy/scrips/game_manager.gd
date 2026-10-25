@@ -49,23 +49,24 @@ func get_purchased_skills():
 func _process(_delta: float) -> void:
 	
 	#heal spell
-	if Input.is_action_just_pressed("f_ability") and heal_off_cooldown: #if pressed F and spell off cooldown
-		heal_off_cooldown = false
-		
-		if gub_health + healing_power >= gub_max_health: #if healing will exceed max hp
-			gub_health = gub_max_health #set hp to max
-		else:
-			gub_health += healing_power #heal gub
-		
-		var secs = 0
-		
-		for i in range(heal_cooldown):
-			await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
-			secs += 1
-			print(secs)
-			if secs >= heal_cooldown:
-				heal_off_cooldown = true
-				print("off cooldonw")
+	if Input.is_action_just_pressed("f_ability"): #if pressed F
+		if heal_off_cooldown and "skill_button_4" in purchased_skills:
+			heal_off_cooldown = false
+			
+			if gub_health + healing_power >= gub_max_health: #if healing will exceed max hp
+				gub_health = gub_max_health #set hp to max
+			else:
+				gub_health += healing_power #heal gub
+			
+			var secs = 0
+			
+			for i in range(heal_cooldown):
+				await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
+				secs += 1
+				print(secs)
+				if secs >= heal_cooldown:
+					heal_off_cooldown = true
+					print("off cooldonw")
 
 
 	#starfall spell
@@ -92,3 +93,5 @@ func _process(_delta: float) -> void:
 			if secs >= heal_cooldown:
 				heal_off_cooldown = true
 				print("off cooldonw")
+
+#ability unlocks
