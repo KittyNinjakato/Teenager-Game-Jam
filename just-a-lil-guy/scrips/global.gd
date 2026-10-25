@@ -23,3 +23,4 @@ func reset():
 	slime_death = 0
 	wave_end = true
 	
+	

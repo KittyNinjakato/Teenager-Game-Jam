@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dxeq2fyn2fpnv" path="res://scrips/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bkfqgclfoiekq" path="res://scenes/lil_guy.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bvlmnjxvei21u" path="res://scenes/mouse.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://dcwe737tdj77v" path="res://scenes/skill_tree_ui.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://cndea4bvxmbkd" path="res://sprites/Backround.webp" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://ct8iulp3cut4d" path="res://scrips/enemy_spawner.gd" id="6_u5sy4"]
 
@@ -34,10 +33,6 @@ layer = 2
 [node name="Mouse" parent="Mouse_Canvas_layer" unique_id=858982482 instance=ExtResource("4_lbhrr")]
 z_index = 15
 position = Vector2(605, 327)
-
-[node name="Skill_tree" parent="." unique_id=1363677048 instance=ExtResource("5_iywne")]
-z_index = 6
-scale = Vector2(0.84000015, 0.84000015)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2134358458]
 z_index = -1000

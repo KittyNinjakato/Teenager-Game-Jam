@@ -15,6 +15,8 @@ func _on_enemy_spawning_timer_timeout():
 		Global.wave_end = false
 	#the wave we are on is increased
 		Global.wave_num += 1
+		get_tree().change_scene_to_file("res://scenes/skill_tree_ui.tscn")
+		
 	
 	
 	#if the amount of slimes is less then how many there should be
