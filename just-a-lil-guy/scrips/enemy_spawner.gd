@@ -9,12 +9,13 @@ func _on_enemy_spawning_timer_timeout():
 	
 	#sees if the amount of slimes is the same as how many slimes should spawn and if the wave has ended
 	if amount_spawned ==  Global.slimes_per_wave[Global.wave_num] and Global.wave_end == true:
-	#if the wave has ended amount of slimes is reset 
+		#if the wave has ended amount of slimes is reset 
 		amount_spawned = 0
-	#if the wave has ended has reset
+		#if the wave has ended has reset
 		Global.wave_end = false
-	#the wave we are on is increased
+		#the wave we are on is increased
 		Global.wave_num += 1
+		
 		get_tree().change_scene_to_file("res://scenes/skill_tree_ui.tscn")
 		
 	

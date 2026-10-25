@@ -3,6 +3,7 @@ extends Node
 var gub_health:int = 20
 var gub_max_health:int = 20
 var essence:int = 0
+var purchased_skills = []
 
 var healing_power:int = 4
 
@@ -28,7 +29,12 @@ func spend_essence(cost,bought): #validates purchases and removes essense bsaed 
 		return "pass"
 
 
-@onready var heal_spell_cooldown_timer: Timer = $Heal_spell_cooldown_timer
+func store_purchased_skill(skill): #when just bought a skill
+	purchased_skills.append(skill) #add skill to bought skills
+
+func get_purchased_skills(): 
+	return purchased_skills
+
 
 func _process(_delta: float) -> void:
 	
@@ -42,4 +48,5 @@ func _process(_delta: float) -> void:
 			gub_health += healing_power #heal gub
 		print("after heal: " + str(gub_health))
 		
-		
+		#await get_tree().create_timer(1.0).timeout
+		get_tree().create_timer(3)
