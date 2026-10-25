@@ -31,8 +31,8 @@ func _on_mouse_exited():
 	
 
 func _process(_delta: float) -> void:
-	var is_off_cooldown = game_manager.check_click_cooldown()
-	if clickable and is_off_cooldown: #if mouse is on slime and click is off cooldown
+#	var is_off_cooldown = game_manager.check_click_cooldown()
+#	if clickable and is_off_cooldown: #if mouse is on slime and click is off cooldown
 		
 		if Input.is_action_just_pressed("click"): #if clicked
 			
@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 			
 			print("youch")
 			if hp <= 0: #if drops to 0 health
-				var essence_dropped:int = rng.randf_range(min_essence,max_essence) #random num between min and max
+			#	var essence_dropped:int = rng.randf_range(min_essence,max_essence) #random num between min and max
 				game_manager.get_essence(essence_dropped) #essence added to collected essence
 				slime_died() #delete slime
 
