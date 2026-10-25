@@ -11,7 +11,7 @@ func _exit_tree():
 
 func _on_area_entered(_area: Area2D) -> void:
 	var hp = game_manager.lil_guy_takes_dmg(5)
-	animated_sprite.play("takes_dmg")
+	#animated_sprite.play("takes_dmg")
 	print(hp)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
