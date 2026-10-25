@@ -54,7 +54,13 @@ position = Vector2(530, 300)
 z_index = 6
 scale = Vector2(0.84000015, 0.84000015)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1535481824]
+[node name="Background" type="Sprite2D" parent="." unique_id=1535481824]
 z_index = -1000
 position = Vector2(570, 330)
 texture = ExtResource("6_p57ef")
+
+[node name="Click_cooldown" type="Timer" parent="." unique_id=1852240608]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="timeout" from="Click_cooldown" to="game_manager" method="_on_click_cooldown_timeout"]

@@ -18,7 +18,7 @@ func _ready():
 #when any button is pressed
 func _on_pressed():
 	
-	var skill_pressed:String = get_meta("Skill_name") #name of the button pressed
+	#var skill_pressed:String = get_meta("Skill_name") #name of the button pressed
 	var essence_cost:int = get_meta("essence_cost") #cost of button pressed to buy
 	var already_bought:bool = get_meta("Bought") #if button has already been purchased
 	
