@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bg6vwau8fjeyc" path="res://sprites/Slime10.webp" id="10_2v7ff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
+radius = 18.750025
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
 atlas = ExtResource("2_p2gj0")
