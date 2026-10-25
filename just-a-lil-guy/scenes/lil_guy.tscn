@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b8fh5cur4yfuj" path="res://sprites/Gub10.webp" id="8_q2svl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu4hj"]
 atlas = ExtResource("1_01xe7")

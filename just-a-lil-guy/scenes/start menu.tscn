@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8fh5cur4yfuj" path="res://sprites/Gub10.webp" id="9_v8tkd"]
 [ext_resource type="Texture2D" uid="uid://r6ll6tuvgaoi" path="res://sprites/placeholder_lil_guy.png" id="10_4awlh"]
 [ext_resource type="Texture2D" uid="uid://brufuv5qfevl7" path="res://sprites/lil_guy_placeholder+.png" id="11_kwxjk"]
+[ext_resource type="AudioStream" uid="uid://3ynxrfn0bu1g" path="res://music/MAINMENUTHEMEGUBB.ogg" id="13_sb01e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu4hj"]
 atlas = ExtResource("10_4awlh")
@@ -166,5 +167,10 @@ text = "[wave amp = 200 freq = 5 speed = 10 ease = -2.0]GUBB[/wave]"
 fit_content = true
 tab_size = 7
 visible_characters_behavior = 1
+
+[node name="Start_menu_music" type="AudioStreamPlayer2D" parent="." unique_id=1512626634]
+stream = ExtResource("13_sb01e")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
