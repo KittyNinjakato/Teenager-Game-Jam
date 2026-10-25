@@ -32,16 +32,13 @@ func _on_mouse_exited():
 
 func _process(_delta: float) -> void:
 	
-	if clickable:# and is_off_cooldown: #if mouse is on slime and click is off cooldown
+	if clickable: #if mouse is on slime and click is off cooldown
 		
 		if Input.is_action_just_pressed("click"): #if clicked
 			
 			hp -= player_dmg #deal damage to health
 			animated_sprite.modulate = Color(0.822, 0.0, 0.0, 0.792)
 			hurt_colouration_timer.start()
-			
-			
-			
 			
 			#print("youch")
 			if hp <= 0: #if drops to 0 health
