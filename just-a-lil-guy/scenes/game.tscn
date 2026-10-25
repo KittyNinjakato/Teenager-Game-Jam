@@ -51,7 +51,6 @@ z_index = 15
 position = Vector2(530, 300)
 
 [node name="Skill_tree" parent="." unique_id=1363677048 instance=ExtResource("5_iywne")]
-visible = false
 z_index = 6
 scale = Vector2(0.84000015, 0.84000015)
 

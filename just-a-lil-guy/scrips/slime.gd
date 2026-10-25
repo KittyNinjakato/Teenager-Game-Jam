@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("click"): #if clicked
 			hp -= player_dmg #deal damage to health
 			animated_sprite.play("takes_dmg") #play damage animation
+			
 			if hp <= 0: #if drops to 0 health
 				var essence_dropped = rng.randf_range(min_essence,max_essence) #random num between min and max
 				game_manager.get_essence(essence_dropped) #essence added to collected essence
@@ -38,7 +39,7 @@ func _process(_delta: float) -> void:
 
 #when any animation is finished
 func _on_animated_sprite_2d_animation_finished() -> void:
-	animated_sprite.play("idle")
+	animated_sprite.play("New idle")
 	
 	
 

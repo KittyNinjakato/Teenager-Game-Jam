@@ -86,16 +86,15 @@ script = ExtResource("1_p2gj0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422503884]
 z_index = 3
 position = Vector2(0.9999999, 1.9999998)
-scale = Vector2(1.4399979, 1.4399979)
+scale = Vector2(2.5999985, 2.5999985)
 shape = SubResource("CircleShape2D_ypebk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1378827583]
-position = Vector2(9, 84)
+position = Vector2(9.000001, 32.000004)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_eelip")
 animation = &"New idle"
 autoplay = "New idle"
-frame = 8
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
