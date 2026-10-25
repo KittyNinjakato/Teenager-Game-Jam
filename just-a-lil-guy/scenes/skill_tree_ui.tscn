@@ -90,7 +90,7 @@ offset_right = -32.0
 offset_bottom = -12.0
 disabled = true
 metadata/Skill_name = "Skill_button_4"
-metadata/essence_cost = 20
+metadata/essence_cost = 27
 
 [node name="cost_label_4" type="Label" parent="skill_button_1/skill_button_2/skill_button_4" unique_id=1061298205]
 layout_mode = 1
@@ -104,7 +104,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 10
-text = "cost: 20"
+text = "cost: 27"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -116,7 +116,7 @@ offset_right = -8.0
 offset_bottom = -12.0
 disabled = true
 metadata/Skill_name = "Skill_button_8"
-metadata/essence_cost = 14
+metadata/essence_cost = 19
 
 [node name="cost_label_8" type="Label" parent="skill_button_1/skill_button_2/skill_button_4/skill_button_8" unique_id=1776002709]
 layout_mode = 1
@@ -130,7 +130,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 10
-text = "cost: 14"
+text = "cost: 19"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -142,7 +142,7 @@ offset_right = 88.0
 offset_bottom = -12.0
 disabled = true
 metadata/Skill_name = "Skill_button_9"
-metadata/essence_cost = 16
+metadata/essence_cost = 24
 
 [node name="cost_label_9" type="Label" parent="skill_button_1/skill_button_2/skill_button_4/skill_button_9" unique_id=27435822]
 layout_mode = 1
@@ -156,7 +156,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 10
-text = "cost: 16"
+text = "cost: 24"
 horizontal_alignment = 2
 vertical_alignment = 2
 

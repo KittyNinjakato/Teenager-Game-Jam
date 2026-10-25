@@ -23,6 +23,8 @@ script = ExtResource("6_u5sy4")
 [node name="Enemy Spawning Timer" type="Timer" parent="game_manager/Enemy Spawner" unique_id=541270423]
 autostart = true
 
+[node name="Heal_spell_cooldown_timer" type="Timer" parent="game_manager" unique_id=666806755]
+
 [node name="Lil_guy" parent="." unique_id=1539912893 instance=ExtResource("1_uwrxv")]
 position = Vector2(571, 313)
 scale = Vector2(3, 3)
@@ -39,9 +41,4 @@ z_index = -1000
 position = Vector2(570, 330)
 texture = ExtResource("6_p57ef")
 
-[node name="Click_cooldown" type="Timer" parent="." unique_id=1852240608]
-wait_time = 0.35
-one_shot = true
-
 [connection signal="timeout" from="game_manager/Enemy Spawner/Enemy Spawning Timer" to="game_manager/Enemy Spawner" method="_on_enemy_spawning_timer_timeout"]
-[connection signal="timeout" from="Click_cooldown" to="game_manager" method="_on_click_cooldown_timeout"]
