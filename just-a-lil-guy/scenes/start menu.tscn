@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://cdpyedoi7ycs3"]
+
+[ext_resource type="FontFile" uid="uid://dw2k07uysqtkx" path="res://sprites/quaver.ttf" id="1_1cst2"]
+[ext_resource type="Script" uid="uid://bn1rhskgi43qc" path="res://scrips/start_menu.gd" id="1_e6whn"]
+[ext_resource type="Texture2D" uid="uid://cqw2s2ynlhhsu" path="res://sprites/FEBE23D5-A7E1-4920-A9E0-1B4EFCFDBADB.png" id="2_wb4mf"]
+[ext_resource type="PackedScene" uid="uid://bvlmnjxvei21u" path="res://scenes/mouse.tscn" id="3_wb4mf"]
+[ext_resource type="Texture2D" uid="uid://duvrbjv3out1j" path="res://sprites/Gub5.webp" id="4_1qyeh"]
+[ext_resource type="Texture2D" uid="uid://4poqwrg8srs" path="res://sprites/Gub6.webp" id="5_e6whn"]
+[ext_resource type="Texture2D" uid="uid://bkssrobkbbhb6" path="res://sprites/Gub7.webp" id="6_sb01e"]
+[ext_resource type="Texture2D" uid="uid://bdwye2ja05lxx" path="res://sprites/Gub8.webp" id="7_1q1oc"]
+[ext_resource type="Texture2D" uid="uid://b8a5w6w5gkmpx" path="res://sprites/Gub9.webp" id="8_f7681"]
+[ext_resource type="Texture2D" uid="uid://b8fh5cur4yfuj" path="res://sprites/Gub10.webp" id="9_v8tkd"]
+[ext_resource type="Texture2D" uid="uid://r6ll6tuvgaoi" path="res://sprites/placeholder_lil_guy.png" id="10_4awlh"]
+[ext_resource type="Texture2D" uid="uid://brufuv5qfevl7" path="res://sprites/lil_guy_placeholder+.png" id="11_kwxjk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu4hj"]
+atlas = ExtResource("10_4awlh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j240v"]
+atlas = ExtResource("10_4awlh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxn1k"]
+atlas = ExtResource("11_kwxjk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4da7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1qyeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sb01e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1q1oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f7681")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v8tkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qyeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e6whn")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu4hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j240v")
+}],
+"loop": 0,
+"name": &"old idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_yxn1k")
+}],
+"loop": 0,
+"name": &"takes_dmg",
+"speed": 1.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qyeh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1q1oc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb01e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6whn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb01e"]
+
+[node name="Start Menu" type="Control" unique_id=2029095813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6whn")
+
+[node name="Label" type="Label" parent="." unique_id=2112903315]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.12345679
+anchor_right = 0.5
+anchor_bottom = 0.12345679
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_1cst2")
+theme_override_font_sizes/font_size = 152
+text = "GUBB"
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouse" parent="." unique_id=851941238 instance=ExtResource("3_wb4mf")]
+z_index = 4096
+position = Vector2(563, 329.99997)
+
+[node name="Febe23d5A7e14920A9e01b4efcfdbadb" type="Sprite2D" parent="." unique_id=1043933963]
+position = Vector2(598, 313)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_wb4mf")
+
+[node name="GUBB" type="AnimatedSprite2D" parent="." unique_id=776505492]
+position = Vector2(836.00006, 626)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_c4da7")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Button" type="Button" parent="." unique_id=130511006]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = 39.0
+offset_right = 91.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.40154216, 0.3025479, 0.46478844, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.4, 0.3019608, 0.46666667, 1)
+theme_override_fonts/font = ExtResource("1_1cst2")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qyeh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1q1oc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sb01e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e6whn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sb01e")
+text = "start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -93,7 +93,7 @@ script = ExtResource("1_bu4hj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93334792]
 shape = SubResource("CircleShape2D_ypebk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753138092]
+[node name="GUBB" type="AnimatedSprite2D" parent="." unique_id=1753138092]
 position = Vector2(60.999996, 12.999999)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ypebk")
@@ -101,4 +101,4 @@ animation = &"idle"
 autoplay = "idle"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="GUBB" to="." method="_on_animated_sprite_2d_animation_finished"]
