@@ -28,7 +28,6 @@ offset_bottom = 576.0
 scale = Vector2(2, 2)
 accessibility_name = "Skill_button_1"
 metadata/Skill_name = "Skill_button_1"
-metadata/essence_cost = 1
 
 [node name="cost_label_1" type="Label" parent="skill_button_1" unique_id=323459981]
 z_index = 1

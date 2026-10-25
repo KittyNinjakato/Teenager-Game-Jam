@@ -3,7 +3,6 @@ class_name SkillNode
 
 @onready var panel: Panel = $Panel
 @onready var line_2d: Line2D = $Line2D
-@onready var game_manager: Node = $"/root/Node2D/game_manager"
 
 
 #connects skill nodes with each other somehow

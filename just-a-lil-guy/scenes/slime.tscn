@@ -97,6 +97,11 @@ sprite_frames = SubResource("SpriteFrames_eelip")
 animation = &"New idle"
 autoplay = "New idle"
 
+[node name="Hurt_colouration_timer" type="Timer" parent="." unique_id=1204554133]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Hurt_colouration_timer" to="." method="_on_hurt_colouration_timer_timeout"]

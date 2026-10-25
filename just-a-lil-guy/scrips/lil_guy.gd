@@ -1,6 +1,6 @@
 extends Area2D
-@onready var game_manager: Node = %game_manager
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $GUBB
+
 @onready var slime: Area2D = $"."
 
 func _ready():
