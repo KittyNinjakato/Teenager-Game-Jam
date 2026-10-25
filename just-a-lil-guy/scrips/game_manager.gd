@@ -12,7 +12,7 @@ func lil_guy_takes_dmg(dmg):
 	gub_health -= dmg
 	#print("health: " + str(health))
 	if gub_health <= 0:
-		print("You lost!")
+		get_tree().change_scene_to_file("res://scenes/death.tscn")
 	return gub_health
 
 
