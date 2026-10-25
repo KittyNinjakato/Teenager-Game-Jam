@@ -35,22 +35,25 @@ func _process(_delta: float) -> void:
 	if clickable: #if mouse is on slime and click is off cooldown
 		
 		if Input.is_action_just_pressed("click"): #if clicked
+			deal_damage(player_dmg)
 			
-			hp -= player_dmg #deal damage to health
-			animated_sprite.modulate = Color(0.822, 0.0, 0.0, 0.792)
-			hurt_colouration_timer.start()
-			
-			#print("youch")
-			if hp <= 0: #if drops to 0 health
-				var essence_dropped:int = rng.randf_range(min_essence,max_essence) #random num between min and max
-				game_manager.get_essence(essence_dropped) #essence added to collected essence
-				slime_died() #delete slime
 
 
 #when any animation is finished
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite.play("New idle")
 
+#deal
+func deal_damage(dmg):
+	hp -= player_dmg #deal damage to health
+	animated_sprite.modulate = Color(0.822, 0.0, 0.0, 0.792)
+	hurt_colouration_timer.start()
+	
+	
+	if hp <= 0: #if drops to 0 health
+		var essence_dropped:int = rng.randf_range(min_essence,max_essence) #random num between min and max
+		game_manager.get_essence(essence_dropped) #essence added to collected essence
+		slime_died() #delete slime
 
 
 func _physics_process(delta: float) -> void:

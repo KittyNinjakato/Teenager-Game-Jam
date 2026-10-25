@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://cie8ogblxhxs0"
 game_manager="*uid://dxeq2fyn2fpnv"
+StarfallHitbox="*uid://c4ba0oue7q0ui"
 
 [display]
 

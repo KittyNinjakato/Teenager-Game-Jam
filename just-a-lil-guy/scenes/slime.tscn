@@ -82,6 +82,7 @@ animations = [{
 }]
 
 [node name="slime" type="Area2D" unique_id=846581861]
+collision_mask = 5
 script = ExtResource("1_p2gj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422503884]
