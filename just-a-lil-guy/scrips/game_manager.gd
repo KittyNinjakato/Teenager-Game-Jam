@@ -18,8 +18,16 @@ var starfall_cooldown:int = 16
 var starfall_off_cooldown:bool = true
 
 
+func _ready() -> void:
+		update_health_bar()
+	
+
+
 func lil_guy_takes_dmg(dmg):
+	
 	gub_health -= dmg
+	
+	update_health_bar()
 	#print("health: " + str(health))
 	
 	if gub_health <= 0: #on defeat
@@ -75,8 +83,12 @@ func _process(_delta: float) -> void:
 			
 			if gub_health + healing_power >= gub_max_health: #if healing will exceed max hp
 				gub_health = gub_max_health #set hp to max
+				update_health_bar()
+				
 			else:
 				gub_health += healing_power #heal gub
+				update_health_bar()
+			
 			
 			var secs = 0
 			
@@ -114,7 +126,8 @@ func _process(_delta: float) -> void:
 				heal_off_cooldown = true
 				print("off cooldonw")
 				
-	Global.health = str(gub_health) + "/" + str(gub_max_health)
 	
-
+	
+func update_health_bar():
+	Global.health = str(gub_health) + "/" + str(gub_max_health)
 #ability unlocks

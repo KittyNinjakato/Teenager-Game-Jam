@@ -3,5 +3,5 @@ extends RichTextLabel
 
 func _process(delta: float):
 	
-	$".".text = Global.health 
+	$".".text = str(Global.health)
 	
