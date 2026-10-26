@@ -31,6 +31,7 @@ func lil_guy_takes_dmg(dmg):
 
 func get_essence(amount):
 	essence += amount
+	Global.essence = essence #so essence can be counted
 	#print("essence: " + str(essence))
 
 
@@ -60,6 +61,8 @@ func search_for_purchased_skill(skill):
 
 #@onready var starfall_hitbox: Area2D = $"."
 func _process(_delta: float) -> void:
+	
+	
 	
 	#heal spell
 	if Input.is_action_just_pressed("f_ability"): #if pressed F
@@ -108,5 +111,8 @@ func _process(_delta: float) -> void:
 			if secs >= heal_cooldown:
 				heal_off_cooldown = true
 				print("off cooldonw")
+				
+	Global.health = str(gub_health) + "/" + str(gub_max_health)
+	print(Global.health)
 
 #ability unlocks

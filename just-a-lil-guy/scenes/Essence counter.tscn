@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c0swtsx0g17h5"]
+
+[ext_resource type="FontFile" uid="uid://dw2k07uysqtkx" path="res://sprites/quaver.ttf" id="1_tcmvr"]
+[ext_resource type="Script" uid="uid://dx1u201vjma38" path="res://scenes/essence.gd" id="1_ypeng"]
+[ext_resource type="Texture2D" uid="uid://blx4xnpe5hh5j" path="res://sprites/Icons/New Piskel-1.png (5).png" id="3_4e7gn"]
+
+[node name="Essence counter" type="Control" unique_id=780830809]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Essence" type="RichTextLabel" parent="." unique_id=1325736081]
+z_index = 1000
+layout_mode = 0
+offset_left = -63.0
+offset_top = -1.0
+offset_right = 64.0
+offset_bottom = 13.0
+theme_override_fonts/normal_font = ExtResource("1_tcmvr")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("1_ypeng")
+
+[node name="NewPiskel1_png(5)" type="Sprite2D" parent="." unique_id=1540789969]
+texture = ExtResource("3_4e7gn")
+metadata/_edit_lock_ = true

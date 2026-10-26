@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e8v8x2ryghbb"
-path="res://.godot/imported/Fist pixel art.png-878860e023c89fe7589bb4d29a4ca1e5.ctex"
+uid="uid://blx4xnpe5hh5j"
+path="res://.godot/imported/New Piskel-1.png (5).png-bfc70c36db46e94418b1678110660674.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Fist pixel art.png"
-dest_files=["res://.godot/imported/Fist pixel art.png-878860e023c89fe7589bb4d29a4ca1e5.ctex"]
+source_file="res://sprites/Icons/New Piskel-1.png (5).png"
+dest_files=["res://.godot/imported/New Piskel-1.png (5).png-bfc70c36db46e94418b1678110660674.ctex"]
 
 [params]
 

@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dxeq2fyn2fpnv" path="res://scrips/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bkfqgclfoiekq" path="res://scenes/lil_guy.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bvlmnjxvei21u" path="res://scenes/mouse.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://c0swtsx0g17h5" path="res://scenes/Essence counter.tscn" id="6_gee14"]
 [ext_resource type="Texture2D" uid="uid://cndea4bvxmbkd" path="res://sprites/Backround.webp" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://ct8iulp3cut4d" path="res://scrips/enemy_spawner.gd" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://co0h5eykgd3l" path="res://scenes/Health bar.tscn" id="7_u5sy4"]
 
 [node name="The world" type="Node2D" unique_id=209446630]
 
@@ -38,5 +40,22 @@ position = Vector2(605, 327)
 z_index = -1000
 position = Vector2(570, 330)
 texture = ExtResource("6_p57ef")
+
+[node name="Essence counter" parent="." unique_id=780830809 instance=ExtResource("6_gee14")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 886.0
+offset_top = 632.0
+offset_right = 886.0
+offset_bottom = 632.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Health bar" parent="." unique_id=2094121534 instance=ExtResource("7_u5sy4")]
+offset_left = 1073.0
+offset_top = 614.0
+offset_right = 1073.0
+offset_bottom = 614.0
 
 [connection signal="timeout" from="game_manager/Enemy Spawner/Enemy Spawning Timer" to="game_manager/Enemy Spawner" method="_on_enemy_spawning_timer_timeout"]

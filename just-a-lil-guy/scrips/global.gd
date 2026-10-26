@@ -2,7 +2,8 @@ extends Node
 
 var gub = null
 #states the variable gub so it can be accessed anywhere
-
+var essence = 0
+var health = 0
 @export var slime_death = 0 #how many slimes have died
 
 @export var wave_num = 0 #what wave we are on
