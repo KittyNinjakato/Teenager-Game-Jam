@@ -4,8 +4,8 @@ var slime = preload("res://scenes/slime.tscn")
 var amount_spawned = 0
 
 func _on_enemy_spawning_timer_timeout():
-	print("amount spawned",amount_spawned)
-	print("how many should spawn",Global.slimes_per_wave[Global.wave_num])
+	#print("amount spawned",amount_spawned)
+	#print("how many should spawn",Global.slimes_per_wave[Global.wave_num])
 	
 	#sees if the amount of slimes is the same as how many slimes should spawn and if the wave has ended
 	if amount_spawned ==  Global.slimes_per_wave[Global.wave_num] and Global.wave_end == true:

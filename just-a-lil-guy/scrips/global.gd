@@ -8,7 +8,7 @@ var gub = null
 @export var wave_num = 0 #what wave we are on
 #*******************************************************
 #this array holds how many slimes spawn per wave starting at 0
-@export var slimes_per_wave = [5,12,18,21,30]
+@export var slimes_per_wave = [5,12,18,21,30,45,58,69,100,130,180,250,500,2000,6969,58008,1]
 #*******************************************************
 var wave_end = false #sees if the wave has ended
 
