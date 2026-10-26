@@ -21,8 +21,11 @@ var starfall_off_cooldown:bool = true
 func lil_guy_takes_dmg(dmg):
 	gub_health -= dmg
 	#print("health: " + str(health))
-	if gub_health <= 0:
-		get_tree().change_scene_to_file("res://scenes/death.tscn")
+	
+	if gub_health <= 0: #on defeat
+		get_tree().change_scene_to_file("res://scenes/death.tscn") #swap scene
+		music_player.stop_main_music() #stop main music
+		music_player.play_death_music() #start detah music
 	return gub_health
 
 
@@ -44,13 +47,25 @@ func store_purchased_skill(skill): #when just bought a skill
 
 func get_purchased_skills(): 
 	return purchased_skills
+	
+func search_for_purchased_skill(skill):
+	#print(skill)
+	#print(purchased_skills)
+	if skill in purchased_skills:
+		#print("heal spell found")
+		return true
+	else:
+		#print("no heal spell")
+		return false
 
 #@onready var starfall_hitbox: Area2D = $"."
 func _process(_delta: float) -> void:
 	
 	#heal spell
 	if Input.is_action_just_pressed("f_ability"): #if pressed F
-		if heal_off_cooldown and "skill_button_4" in purchased_skills:
+		var has_heal_spell = search_for_purchased_skill("Skill_button_4") #check if unlocked spell
+		#print(has_heal_spell)
+		if heal_off_cooldown and has_heal_spell: #if off cooldown and unlocked the spell
 			heal_off_cooldown = false
 			
 			if gub_health + healing_power >= gub_max_health: #if healing will exceed max hp
@@ -64,7 +79,7 @@ func _process(_delta: float) -> void:
 				await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
 				secs += 1
 				print(secs)
-				if secs >= heal_cooldown:
+				if secs >= heal_cooldown: #if finished cooldown
 					heal_off_cooldown = true
 					print("off cooldonw")
 
