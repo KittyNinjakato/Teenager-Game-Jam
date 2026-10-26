@@ -40,7 +40,9 @@ func spend_essence(cost,bought): #validates purchases and removes essense bsaed 
 		return "fail" 
 	else: #if you have enough essense and skill isnt purchased
 		essence -= cost #remove essence from player
+		Global.essence = essence
 		return "pass"
+	
 
 
 func store_purchased_skill(skill): #when just bought a skill
@@ -113,6 +115,6 @@ func _process(_delta: float) -> void:
 				print("off cooldonw")
 				
 	Global.health = str(gub_health) + "/" + str(gub_max_health)
-	print(Global.health)
+	
 
 #ability unlocks
