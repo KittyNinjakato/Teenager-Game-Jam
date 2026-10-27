@@ -3,6 +3,10 @@ extends Node
 var slime = preload("res://scenes/slime.tscn")
 var amount_spawned = 0
 
+func _onready():
+	Global.node_creation_parent = self
+
+
 func _on_enemy_spawning_timer_timeout():
 	#print("amount spawned",amount_spawned)
 	#print("how many should spawn",Global.slimes_per_wave[Global.wave_num])
@@ -44,6 +48,7 @@ func _on_enemy_spawning_timer_timeout():
 		
 		#this tells us how many slimes have been spawned
 		amount_spawned += 1
+	
 	
 	
 	

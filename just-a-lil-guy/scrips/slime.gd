@@ -9,6 +9,7 @@ var min_essence:int = 2
 var max_essence:int = 5
 var essence_dropped:int = 0
 var rng = RandomNumberGenerator.new()
+var slime_particles = preload("res://scenes/slime_particles.tscn")
 
 var click_cooldown = 0.35
 
@@ -46,7 +47,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 #deal
 func deal_damage(dmg):
 	hp -= player_dmg #deal damage to health
-	animated_sprite.modulate = Color(0.822, 0.0, 0.0, 0.792)
+	animated_sprite.modulate = Color(1.0, 1.0, 1.0, 0.792)
 	hurt_colouration_timer.start()
 	
 	
@@ -65,8 +66,10 @@ func _physics_process(delta: float) -> void:
 	
 func slime_died():
 	Global._wave_counter()
+	if Global.node_creation_parent != null:
+		Global.instance_node(slime_particles, global_position, Global.node_creation_parent)
 	queue_free()
 
 
 func _on_hurt_colouration_timer_timeout() -> void: #when hurt timer ends
-	animated_sprite.modulate = Color(1,1,1,1) #return to default value
+	animated_sprite.modulate = Color(1.0, 0.0, 1.0, 1.0) #return to default value

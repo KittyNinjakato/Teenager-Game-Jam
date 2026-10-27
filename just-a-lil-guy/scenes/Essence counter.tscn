@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0swtsx0g17h5"]
 
 [ext_resource type="FontFile" uid="uid://dw2k07uysqtkx" path="res://sprites/quaver.ttf" id="1_tcmvr"]
-[ext_resource type="Script" uid="uid://dx1u201vjma38" path="res://scenes/essence.gd" id="1_ypeng"]
+[ext_resource type="Script" uid="uid://dx1u201vjma38" path="res://scrips/essence.gd" id="1_ypeng"]
 [ext_resource type="Texture2D" uid="uid://blx4xnpe5hh5j" path="res://sprites/Icons/New Piskel-1.png (5).png" id="3_4e7gn"]
 
 [node name="Essence counter" type="Control" unique_id=780830809]

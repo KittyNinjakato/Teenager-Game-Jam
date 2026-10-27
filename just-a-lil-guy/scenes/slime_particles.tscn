@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cu4x3px28x4ru"]
+
+[ext_resource type="Texture2D" uid="uid://b00bb5oar52fr" path="res://sprites/New Piskel-1.png (7).png" id="1_5vh5f"]
+[ext_resource type="Script" uid="uid://b0gd6yx7h8fyi" path="res://scrips/slime_particles.gd" id="2_aldo3"]
+
+[node name="Slime particles" type="CPUParticles2D" unique_id=1070337923]
+amount = 15
+texture = ExtResource("1_5vh5f")
+lifetime = 0.2
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 177.35
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 658.0
+color = Color(0.79607844, 0.36862746, 0.8156863, 1)
+script = ExtResource("2_aldo3")
+
+[node name="Freeze slime" type="Timer" parent="." unique_id=1137891396]
+wait_time = 0.19
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Freeze slime" to="." method="_on_timer_timeout"]

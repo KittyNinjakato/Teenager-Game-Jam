@@ -1,5 +1,5 @@
 extends Node
-
+var node_creation_parent = null
 var gub = null
 #states the variable gub so it can be accessed anywhere
 var essence = 0
