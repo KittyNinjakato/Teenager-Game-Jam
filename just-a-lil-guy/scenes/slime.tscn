@@ -31,31 +31,31 @@ region = Rect2(0, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2xjuo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_a02ik")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_pu8ps")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_g40cl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_cxm07")
-}, {
-"duration": 1.0,
 "texture": ExtResource("7_g2qvl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_tyl0w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_fur4c")
+"texture": ExtResource("2_2xjuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g40cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pu8ps")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_2v7ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fur4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a02ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cxm07")
 }],
 "loop": 1,
 "name": &"New idle",
@@ -88,7 +88,7 @@ script = ExtResource("1_p2gj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422503884]
 z_index = 3
-position = Vector2(0.9999999, 1.9999998)
+position = Vector2(-1.0000001, -11.5)
 scale = Vector2(2.5999985, 2.5999985)
 shape = SubResource("CircleShape2D_ypebk")
 
@@ -98,6 +98,7 @@ scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_eelip")
 animation = &"New idle"
 autoplay = "New idle"
+frame_progress = 0.4220901
 
 [node name="Hurt_colouration_timer" type="Timer" parent="." unique_id=1204554133]
 wait_time = 0.1

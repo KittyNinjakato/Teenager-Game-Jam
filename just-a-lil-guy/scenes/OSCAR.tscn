@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://dw2k07uysqtkx" path="res://sprites/quaver.ttf" id="12_io8ho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
-radius = 18.750025
+radius = 13.566222
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
 atlas = ExtResource("11_otfo4")
@@ -89,7 +89,7 @@ script = ExtResource("1_io8ho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422503884]
 z_index = 3
-position = Vector2(0.9999999, 1.9999998)
+position = Vector2(-1.5, -7.75)
 scale = Vector2(2.5999985, 2.5999985)
 shape = SubResource("CircleShape2D_ypebk")
 
@@ -99,7 +99,6 @@ scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_eelip")
 animation = &"New idle"
 autoplay = "New idle"
-frame = 7
 
 [node name="Hurt_colouration_timer" type="Timer" parent="." unique_id=1204554133]
 wait_time = 0.1
