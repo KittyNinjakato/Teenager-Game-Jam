@@ -16,7 +16,7 @@ var click_cooldown = 0.35
 @onready var slime: Area2D = $"."
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_colouration_timer: Timer = $Hurt_colouration_timer
-
+var slime_slime = load("res://scenes/slime_particles.tscn")
 
 
 #tracks if slime is allowed to be clicked
@@ -65,9 +65,11 @@ func _physics_process(delta: float) -> void:
 	#the poisiton of the slime is set a bit closer to gub
 	
 func slime_died():
+	var slime_juice = slime_slime.instantiate()
+	slime_juice.global_position = global_position
+	get_tree().get_root().add_child(slime_juice)
 	Global._wave_counter()
-	if Global.node_creation_parent != null:
-		Global.instance_node(slime_particles, global_position, Global.node_creation_parent)
+
 	queue_free()
 
 
