@@ -1,10 +1,11 @@
 extends Node
 
 var slime = preload("res://scenes/slime.tscn")
+var OSCAR = preload("res://scenes/OSCAR.tscn")
 var amount_spawned = 0
+var oscar_wave:bool = false
 
-func _onready():
-	Global.node_creation_parent = self
+
 
 
 func _on_enemy_spawning_timer_timeout():
@@ -38,15 +39,24 @@ func _on_enemy_spawning_timer_timeout():
 		while enemy_position.x < 1210 and enemy_position.x > -80 and enemy_position.y < 690 and enemy_position.y > -45:
 		#if it is it will pick a new position
 			enemy_position = Vector2(randi_range(-180,1310), randi_range(-145,790))
+	#********************************************************************************************************************
+		#Spawning OSCAR in
+		if Global.OSCAR_per_wave[Global.wave_num] != 0:
+			for each in range(Global.OSCAR_per_wave[Global.wave_num]):
+				var OSCAR_ENTERS = OSCAR.instantiate()
+		#sets OSCARS spawn position to generated position
+				OSCAR_ENTERS.position = enemy_position 
+				add_child(OSCAR_ENTERS)
 	#********************************************************************************************************************	
+		else:
 		#spawns the slimes in	
-		var slime_instanciate = slime.instantiate()
-		add_child(slime_instanciate)
+			var slime_instanciate = slime.instantiate()
 		#sets the slimes spawn position to generated position
-		slime_instanciate.position = enemy_position 
-		#generates a random position
+			slime_instanciate.position = enemy_position 
+			add_child(slime_instanciate)
+
 		
-		#this tells us how many slimes have been spawned
+		#this tells us how many things have been spawned
 		amount_spawned += 1
 	
 	

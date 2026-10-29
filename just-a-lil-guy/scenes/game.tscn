@@ -11,7 +11,7 @@
 [node name="The world" type="Node2D" unique_id=209446630]
 
 [node name="Backround" type="Sprite2D" parent="." unique_id=1535481824]
-z_index = -1000
+z_index = -4096
 position = Vector2(570, 330)
 texture = ExtResource("6_p57ef")
 

@@ -1,23 +1,31 @@
 [gd_scene format=3 uid="uid://dbgv8l85nriel"]
 
 [ext_resource type="Texture2D" uid="uid://bm2a6kg6sxpaj" path="res://sprites/Icons/New Piskel-1.png (8).png" id="1_5vh5f"]
+[ext_resource type="Script" uid="uid://b0gd6yx7h8fyi" path="res://scrips/slime_particles.gd" id="2_aldo3"]
+
+[sub_resource type="Gradient" id="Gradient_aldo3"]
+offsets = PackedFloat32Array(0.10107817, 0.16037735, 0.45013478, 0.77628034)
+colors = PackedColorArray(0.79607844, 0.36862746, 0.8156863, 1, 0.79607844, 0.36862746, 0.8156863, 1, 0.7490196, 0.32156864, 0.7882353, 1, 0.5764706, 0.14901961, 0.6745098, 1)
 
 [node name="Slime particles" type="CPUParticles2D" unique_id=1070337923]
-emitting = false
-amount = 15
+z_index = -100
+amount = 120
 texture = ExtResource("1_5vh5f")
 lifetime = 0.2
 explosiveness = 1.0
+randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 177.35
 gravity = Vector2(0, 0)
-initial_velocity_min = 101.0
-initial_velocity_max = 658.0
-color = Color(0.79607844, 0.36862746, 0.8156863, 1)
+initial_velocity_max = 1000.0
+scale_amount_min = 0.5
+color = Color(1, 1, 1, 0.54509807)
+color_ramp = SubResource("Gradient_aldo3")
+script = ExtResource("2_aldo3")
 
 [node name="Freeze slime" type="Timer" parent="." unique_id=1137891396]
-wait_time = 0.19
+wait_time = 0.15
 one_shot = true
 autostart = true
 

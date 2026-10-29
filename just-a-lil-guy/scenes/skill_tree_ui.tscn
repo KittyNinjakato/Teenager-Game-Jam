@@ -510,10 +510,10 @@ metadata/_edit_lock_ = true
 
 [node name="Next wave" type="Button" parent="." unique_id=1034035579]
 layout_mode = 0
-offset_left = 814.0
-offset_top = 672.0
-offset_right = 1214.0
-offset_bottom = 744.0
+offset_left = 869.0
+offset_top = 663.0
+offset_right = 1173.0
+offset_bottom = 749.0
 theme_override_colors/font_pressed_color = Color(0.6666667, 0.5568628, 0.7411765, 1)
 theme_override_colors/font_hover_color = Color(0.4, 0.3019608, 0.46666667, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.4, 0.3019608, 0.46666667, 1)

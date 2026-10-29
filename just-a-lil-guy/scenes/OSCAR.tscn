@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c4tgngf8fdm7e"]
+
+[ext_resource type="Script" uid="uid://7ly1er4br452" path="res://scrips/oscar.gd" id="1_io8ho"]
+[ext_resource type="Texture2D" uid="uid://w05gxhq8ct7y" path="res://sprites/Slime2.webp" id="2_io8ho"]
+[ext_resource type="Texture2D" uid="uid://o8wd17ausebi" path="res://sprites/Slime3.webp" id="3_0n6c4"]
+[ext_resource type="Texture2D" uid="uid://dcarko3lntkrc" path="res://sprites/Slime4.webp" id="4_sklse"]
+[ext_resource type="Texture2D" uid="uid://gdnceaef4kjp" path="res://sprites/Slime5.webp" id="5_ri372"]
+[ext_resource type="Texture2D" uid="uid://qsmoyt31a1g" path="res://sprites/Slime6.webp" id="6_kq0rx"]
+[ext_resource type="Texture2D" uid="uid://bcnqgkd61e11o" path="res://sprites/Slime7.webp" id="7_uo4no"]
+[ext_resource type="Texture2D" uid="uid://cerrg30m41v0u" path="res://sprites/Slime8.webp" id="8_0d8a5"]
+[ext_resource type="Texture2D" uid="uid://c4fw2ajh3a0wu" path="res://sprites/Slime9.webp" id="9_00yc2"]
+[ext_resource type="Texture2D" uid="uid://bg6vwau8fjeyc" path="res://sprites/Slime10.webp" id="10_2wv54"]
+[ext_resource type="Texture2D" uid="uid://da8kk5pd6s2yv" path="res://sprites/slime_placeholder++.png" id="11_otfo4"]
+[ext_resource type="FontFile" uid="uid://dw2k07uysqtkx" path="res://sprites/quaver.ttf" id="12_io8ho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypebk"]
+radius = 18.750025
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
+atlas = ExtResource("11_otfo4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("11_otfo4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("11_otfo4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eelip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_io8ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0n6c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sklse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ri372")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kq0rx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uo4no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0d8a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_00yc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2wv54")
+}],
+"loop": 1,
+"name": &"New idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_2npkn")
+}],
+"loop": 0,
+"name": &"takes_dmg",
+"speed": 1.0
+}]
+
+[node name="OSCAR" type="Area2D" unique_id=846581861]
+scale = Vector2(4, 4)
+collision_mask = 5
+script = ExtResource("1_io8ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1422503884]
+z_index = 3
+position = Vector2(0.9999999, 1.9999998)
+scale = Vector2(2.5999985, 2.5999985)
+shape = SubResource("CircleShape2D_ypebk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1378827583]
+position = Vector2(9.000001, 32.000004)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_eelip")
+animation = &"New idle"
+autoplay = "New idle"
+frame = 7
+
+[node name="Hurt_colouration_timer" type="Timer" parent="." unique_id=1204554133]
+wait_time = 0.1
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1665011580]
+clip_contents = false
+offset_left = -44.25
+offset_top = -64.25
+offset_right = 66.749985
+offset_bottom = -15.049995
+theme_override_fonts/normal_font = ExtResource("12_io8ho")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[rainbow freq = 100
+ sat = 10 speed =0.1][tornado radius = 10.0 freq = 1 connected = 1]OSCAR[tornado][rainbow]"
+fit_content = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Hurt_colouration_timer" to="." method="_on_hurt_colouration_timer_timeout"]
