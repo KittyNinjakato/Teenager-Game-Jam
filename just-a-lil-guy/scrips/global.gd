@@ -7,7 +7,12 @@ var essence = 0
 var health = 0
 @export var slime_death = 0 #how many slimes have died
 
-@export var wave_num = 3 #what wave we are on
+@export var wave_num = 0 #what wave we are on
+
+#@onready var mouse_canvas_layer: CanvasLayer = %Mouse_Canvas_layer
+#@onready var mouse: Sprite2D = $Mouse_Canvas_layer/Mouse
+#@export var mouse_position = mouse.get_viewport()
+
 #*******************************************************
 #this array holds how many slimes spawn per wave starting at 0
 @export var slimes_per_wave = [5,12,18,21,30,1,10,20,45,50,58,11,10,20,30,62,67, 3,20,40,69,82,88,55,5,20, 10,92,100,103,180,250,500,2000,6969,58008,1]
@@ -25,5 +30,3 @@ func _wave_counter():#counts how many slimes have died and sees if all slimes ha
 func reset():
 	slime_death = 0
 	wave_end = true
-	
-	

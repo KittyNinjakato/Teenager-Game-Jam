@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	game_manager.reset_stats()
+
 #when start button pressed
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/game.tscn") #swap to game scene

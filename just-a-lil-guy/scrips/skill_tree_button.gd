@@ -20,7 +20,6 @@ func _ready() -> void:
 	var purchased_skills = game_manager.get_purchased_skills() #get array of purchased skills
 	var skill_name:String = get_meta("Skill_name")
 	
-	#print(purchased_skills) 
 	for skill in purchased_skills:
 		
 		if skill_name in purchased_skills: #if 
