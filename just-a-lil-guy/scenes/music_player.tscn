@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gr78nmyrh3p5"]
 
 [ext_resource type="AudioStream" uid="uid://du7xxki4ipasa" path="res://music/ACTUALTHEMEGUBB.ogg" id="1_jxdhu"]
-[ext_resource type="Script" uid="uid://bi4j2urdinq0m" path="res://scenes/music_player.gd" id="1_ql6qh"]
+[ext_resource type="Script" uid="uid://bi4j2urdinq0m" path="res://scrips/music_player.gd" id="1_ql6qh"]
 [ext_resource type="AudioStream" uid="uid://3ynxrfn0bu1g" path="res://music/MAINMENUTHEMEGUBB.ogg" id="3_l7xiw"]
 [ext_resource type="AudioStream" uid="uid://b18dxkr5n04qu" path="res://music/GUBBDIED.ogg" id="4_yalyj"]
 

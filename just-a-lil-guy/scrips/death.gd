@@ -15,6 +15,7 @@ func _on_try_again_pressed():
 	music_player.play_main_music() #start main music
 
 func reset():
+	game_manager.reset_stats()
 	Global.slime_death = 0
 	Global.wave_end = false
 	Global.wave_num = 0

@@ -30,13 +30,14 @@ func _on_enemy_spawning_timer_timeout():
 		#position finder
 		var enemy_position = Vector2(randi_range(-180,1310), randi_range(-145,790))
 		#generates a random position
-		#checks if the poisiton is within the visible screen
+		#checks if the position is within the visible screen
 		while enemy_position.x < 1210 and enemy_position.x > -80 and enemy_position.y < 690 and enemy_position.y > -45:
 		#if it is it will pick a new position
 			enemy_position = Vector2(randi_range(-180,1310), randi_range(-145,790))
 	#********************************************************************************************************************	
-		#spawns the slimes in	
+		#spawns the slimes in
 		var slime_instanciate = slime.instantiate()
+		
 		add_child(slime_instanciate)
 		#sets the slimes spawn position to generated position
 		slime_instanciate.position = enemy_position 

@@ -43,11 +43,15 @@ func _process(_delta: float) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite.play("New idle")
 
-#deal
+
+#when hurt
 func deal_damage(dmg):
 	hp -= player_dmg #deal damage to health
 	animated_sprite.modulate = Color(0.822, 0.0, 0.0, 0.792)
 	hurt_colouration_timer.start()
+	
+func _on_hurt_colouration_timer_timeout() -> void: #when hurt timer ends
+	animated_sprite.modulate = Color(1,1,1,1) #return to default value
 	
 	
 	if hp <= 0: #if drops to 0 health
@@ -68,5 +72,5 @@ func slime_died():
 	queue_free()
 
 
-func _on_hurt_colouration_timer_timeout() -> void: #when hurt timer ends
-	animated_sprite.modulate = Color(1,1,1,1) #return to default value
+func _on_area_entered(area: Area2D) -> void: #when touched by an abilty hitbox
+	print("refwd")

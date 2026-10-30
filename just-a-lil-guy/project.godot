@@ -25,11 +25,16 @@ Global="*uid://cie8ogblxhxs0"
 game_manager="*uid://dxeq2fyn2fpnv"
 StarfallHitbox="*uid://c4ba0oue7q0ui"
 music_player="*uid://gr78nmyrh3p5"
+Mouse="*uid://d167xkjq1sc7x"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 

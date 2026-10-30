@@ -1,9 +1,11 @@
 extends Node
 
+@onready var starfall_preload = preload("res://scenes/Starfall_hitbox.tscn")
+
 var gub_health:int = 20
 var gub_max_health:int = 20
-var essence:int = 0
-var purchased_skills = []
+var essence:int = 90
+var purchased_skills = ["Skill_button_1"]
 
 var healing_power:int = 4
 var heal_cooldown:int = 10
@@ -16,6 +18,25 @@ var acid_off_cooldown:bool = true
 var starfall_dmg:int = 5
 var starfall_cooldown:int = 16
 var starfall_off_cooldown:bool = true
+
+
+func reset_stats():
+	gub_health = 20
+	gub_max_health = 20
+	essence = 0
+	purchased_skills = ["Skill_button_1"]
+
+	healing_power = 4
+	heal_cooldown = 10
+	heal_off_cooldown = true
+
+	acid_speed_mult = 0.4
+	acid_cooldown = 12
+	acid_off_cooldown = true
+
+	starfall_dmg = 5
+	starfall_cooldown = 16
+	starfall_off_cooldown = true
 
 
 func lil_guy_takes_dmg(dmg):
@@ -42,6 +63,7 @@ func spend_essence(cost,bought): #validates purchases and removes essense bsaed 
 		return "pass"
 
 
+#PURCHASED SKILLS 
 func store_purchased_skill(skill): #when just bought a skill
 	purchased_skills.append(skill) #add skill to bought skills
 
@@ -49,17 +71,13 @@ func get_purchased_skills():
 	return purchased_skills
 	
 func search_for_purchased_skill(skill):
-	#print(skill)
-	#print(purchased_skills)
-	if skill in purchased_skills:
-		#print("heal spell found")
+	if skill in purchased_skills: #if skill is found in purchased skills
 		return true
 	else:
-		#print("no heal spell")
 		return false
 
-#@onready var starfall_hitbox: Area2D = $"."
-func _process(_delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	
 	#heal spell
 	if Input.is_action_just_pressed("f_ability"): #if pressed F
@@ -73,9 +91,9 @@ func _process(_delta: float) -> void:
 			else:
 				gub_health += healing_power #heal gub
 			
+			#cooldown manager
 			var secs = 0
-			
-			for i in range(heal_cooldown):
+			for i in range(heal_cooldown): #loops once per second of cooldown
 				await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
 				secs += 1
 				print(secs)
@@ -84,29 +102,28 @@ func _process(_delta: float) -> void:
 					print("off cooldonw")
 
 
-	#starfall spell
-	if Input.is_action_just_pressed("e_ability") and starfall_off_cooldown: #if pressed E and spell off cooldown
-		starfall_off_cooldown = false
-		
-		#var mouse_location = get_viewport().get_mouse_position()
-		#var hitbox_root = Area2D.new()
-		#hitbox_root.position = mouse_location
-		#var hitbox = CircleShape2D.new()
-		#hitbox.parent = hitbox_root
-		#hitbox.radius = 100
-		#hitbox.collision_layer = 3
-		
-		
-		
-		
-		var secs = 0
-		
-		for i in range(heal_cooldown):
-			await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
-			secs += 1
-			print(secs)
-			if secs >= heal_cooldown:
-				heal_off_cooldown = true
-				print("off cooldonw")
 
-#ability unlocks
+	#starfall spell
+	if Input.is_action_just_pressed("e_ability"): #if pressed E
+		
+		var mouse_position = Mouse.find_mouse_location() #find mouse position
+		var starfall_instance = starfall_preload.instantiate() #create a copy of starfall spell
+		add_child(starfall_instance)
+		starfall_instance.position = mouse_position #sets spell pos to mouse pos
+		
+		var has_starfall_spell = search_for_purchased_skill("Skill_button_6") #check if unlocked spell
+		if starfall_off_cooldown and has_starfall_spell: #if off cooldown and unlocked the spell
+			starfall_off_cooldown = false
+			
+			
+			
+			
+			#cooldown manager
+			var secs = 0
+			for i in range(starfall_cooldown):
+				await get_tree().create_timer(1.0).timeout #create 1 seocnd timer
+				secs += 1
+				print(secs)
+				if secs >= starfall_cooldown: #if finished cooldown
+					starfall_off_cooldown = true
+					print("off cooldonw")
